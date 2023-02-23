@@ -8,8 +8,6 @@ h1 {
     
 }
 
-
-
 .big {
     font-size: 1.6rem;
 }
@@ -21,4 +19,8 @@ h1 {
 
 .spacer {
     margin: 0 10px;
+}
+.book {
+    width: 15rem;
+    padding: 10px 15px;
 }
