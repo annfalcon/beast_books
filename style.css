@@ -24,3 +24,8 @@ h1 {
     width: 15rem;
     padding: 10px 15px;
 }
+
+.heading {
+    font-size: 1.5rem;
+    margin: 10px 5px;
+}
