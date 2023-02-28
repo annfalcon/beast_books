@@ -24,7 +24,7 @@ async function getBooks(kind) {
     $("#books-container").empty();
     for (let i = 0; i < books.length; i++) {
       $("#books-container").append(`<div class="book">
-        <img src="${books[i].volumeInfo.imageLinks.thumbnail}" alt="" srcset="">
+        <img class="imgBook" src="${books[i].volumeInfo.imageLinks.thumbnail}" alt="" srcset="">
         <div class="title">
         ${books[i].volumeInfo.title}
         </div>
