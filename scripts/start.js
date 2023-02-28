@@ -2,6 +2,10 @@ $(document).ready(() => {
   $(".category").click(function () {
     const category = $(this).text();
 
+  $(".category").removeClass("selected")
+
+  $(this).addClass("selected")
+
     getBooks(category);
   });
 
@@ -23,8 +27,13 @@ async function getBooks(kind) {
     console.log(data);
     $("#books-container").empty();
     for (let i = 0; i < books.length; i++) {
+      let thumbnail = ""
+      if (books[i].volumeInfo.imageLinks) {
+        thumbnail=books[i].volumeInfo.imageLinks.thumbnail
+      }
+
       $("#books-container").append(`<div class="book">
-        <img class="imgBook" src="${books[i].volumeInfo.imageLinks.thumbnail}" alt="" srcset="">
+        <img class="imgBook" src="${thumbnail}" alt="" srcset="">
         <div class="title">
         ${books[i].volumeInfo.title}
         </div>

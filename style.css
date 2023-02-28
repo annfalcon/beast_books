@@ -59,12 +59,9 @@ h1 {
     font-size: 1.5rem;
     margin: 10px 5px;
     padding: 10px 15px;
-    cursor: pointer;
+    
 }
 
-.heading-category:hover {
-    color: blue;
-}
 
 
 header {
@@ -90,7 +87,7 @@ header {
 }
 
 .selected {
-    font-weight: 600;
+    font-weight: 400;
     color: blue;
     text-decoration: underline;
 }
