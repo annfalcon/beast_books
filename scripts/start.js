@@ -53,9 +53,9 @@ $(document).ready(() => {
       const item = JSON.parse(localStorage.getItem(key))
       console.log(item)
       $("#offcanvas-cart").append(`<tr>
-        <td><img class="cart-img" src="${item.image}" alt="${item.title}" srcset=""></td>
-        <td>${item.quantity} </td>
-        <td class="cart-price">${item.price} &euro;</td>
+        <td><img class="cart-img img-title" src="${item.image}" alt="${item.title}" srcset=""></td>
+        <td class="book-qty">${item.quantity} </td>
+        <td class="cart-price book-price">${item.price} &euro;</td>
       </tr>`)
     }
   })

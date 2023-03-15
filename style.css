@@ -22,24 +22,9 @@ form {
 }
 
 .btn {
-  background: rgb(108, 186, 240);
-  background: -moz-linear-gradient(
-    53deg,
-    rgba(108, 186, 240, 1) 50%,
-    rgba(243, 200, 127, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    53deg,
-    rgba(108, 186, 240, 1) 50%,
-    rgba(243, 200, 127, 1) 100%
-  );
-  background: linear-gradient(
-    53deg,
-    rgba(108, 186, 240, 1) 50%,
-    rgba(243, 200, 127, 1) 100%
-  );
+  background: rgb(73, 159, 220);
+  
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6cbaf0",endColorstr="#f3c87f",GradientType=1);
-  padding: 10px 30px;
   letter-spacing: 1px;
   cursor: pointer;
 
@@ -103,10 +88,34 @@ header {
 
 .imgBook {
   cursor: pointer;
+  box-shadow: 0 2px 10px 0 gray;
 }
 
 .selected {
   font-weight: 400;
   color: rgb(52, 80, 241);
   text-decoration: underline;
+}
+
+.img-title {
+  transform: scale(0.7);
+  box-shadow: 0 10px 15px 0 gray;
+}
+
+.title {
+  margin-top: 5px;
+  font-size: smaller;
+  width: 8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: smaller;
+}
+
+.table td {
+  vertical-align: middle;
 }
