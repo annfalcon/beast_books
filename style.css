@@ -36,12 +36,35 @@ form {
 
 .basket-big {
     font-size: 30px;
+    cursor: pointer;
 }
 
 .wide {
     width: 100%;
     justify-content: space-evenly;
     
+}
+
+.button-del {
+  background-color: white;
+  border: 2px solid rgb(73, 159, 220);
+  width: 70px;
+  height: auto;
+  padding: 3px;
+  border-radius: 5px;
+  text-transform: capitalize;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button-del:hover {
+  background-color: rgb(55, 161, 150);
+  color: white;
+}
+
+.cart-qty {
+  width: 2rem;
 }
 
 .book {
@@ -114,6 +137,10 @@ header {
 
 .desc {
   font-size: smaller;
+  width: 8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .table td {
