@@ -64,8 +64,6 @@ $(document).ready(() => {
     localStorage.setItem(id, JSON.stringify(item));
   });
 
-
-
   $(".basket-big").click(function () {
     $("#offcanvas-cart").empty();
 
@@ -74,15 +72,23 @@ $(document).ready(() => {
       const item = JSON.parse(localStorage.getItem(key));
       console.log(item);
       $("#offcanvas-cart").append(`<tr id="${key}">
-        <td><img class="cart-img img-title" src="${item.image}" alt="${item.title}" srcset=""></td>
-        <td class="book-qty"><input type="number" class="cart-qty" name="quantity" min="1" max="5" value="${item.quantity}" data-id="${key}"></td>
+        <td><img class="cart-img img-title" src="${item.image}" alt="${
+        item.title
+      }" srcset=""></td>
+        <td class="book-qty"><input type="number" class="cart-qty" name="quantity" min="1" max="5" value="${
+          item.quantity
+        }" data-id="${key}"></td>
 
-        <td class="cart-price book-price"><span id="price-${key}">${item.price*item.quantity}</span> &euro;</td>
+        <td class="cart-price book-price"><span id="price-${key}">${
+        item.price * item.quantity
+      }</span> &euro;</td>
         <td>
           <button class="button-del" data-id="${key}">Delete</button>
         </td>
       </tr>`);
     }
+
+    $("#totalPrice").text(totalPrice())
   });
 
   // Handle click for delete button (this button is added by JS)
@@ -93,8 +99,12 @@ $(document).ready(() => {
     localStorage.removeItem(id);
     // Remove from html
     $(`#${id}`).remove();
+    //Update todal price on screen
+    $("#totalPrice").text(totalPrice())
   });
-  $("#offcanvas-cart").on("change", ".cart-qty", function(){
+
+  // Handle quantity change events
+  $("#offcanvas-cart").on("change", ".cart-qty", function () {
     //Reading book id from the input
     const id = $(this).data("id");
     //Convert string into object
@@ -104,21 +114,24 @@ $(document).ready(() => {
     //Update to local storage - converts object to string
     localStorage.setItem(id, JSON.stringify(item));
     //Calculate new price
-    const newPrice = item.price*item.quantity;
+    const newPrice = item.price * item.quantity;
     //Update price in cart html
-    $(`#price-${id}`).text(newPrice);
- 
-
-
-  
-
-
-    
-    console.log($(this).val())
-  })
-
-
+    $(`#price-${id}`).text(newPrice.toFixed(2));
+    //Update total 
+    $("#totalPrice").text(totalPrice())
+  });
 });
+
+
+function totalPrice() {
+  let total = 0;
+  for (let i=0; i< localStorage.length; i++){
+    const key = localStorage.key(i);
+    const item = JSON.parse(localStorage.getItem(key));
+    total = total + (item.price * item.quantity);
+  }
+  return total.toFixed(2)
+}
 
 // This function fetch books from google books API and adds books in the book container
 async function getBooks(kind) {
@@ -143,10 +156,10 @@ async function getBooks(kind) {
         thumbnail = books[i].volumeInfo.imageLinks.thumbnail;
       }
 
-    let amount = 24.99
-    if(books[i].saleInfo.retailPrice){
-      amount=books[i].saleInfo.retailPrice.amount
-    }
+      let amount = 24.99;
+      if (books[i].saleInfo.retailPrice) {
+        amount = books[i].saleInfo.retailPrice.amount;
+      }
 
       // Add book html to container
 
@@ -161,7 +174,6 @@ async function getBooks(kind) {
         
         <div class="price">${amount} &euro;</div>
       
-
         <button type="button" class="btn btn-primary btn-sm btn-add-cart" data-id="${
           books[i].id
         }" data-title="${books[i].volumeInfo.title.replace(
