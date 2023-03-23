@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chango&family=Fredoka&family=Poppins&display=swap');
 
 * {
   margin: 0;
@@ -11,13 +11,19 @@
 
 h1 {
   text-align: center;
-  color: #1f57b8;
+  font-family: 'Chango', cursive;
+  color: #3a6dc4;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black
  }
 
+ nav, main, div #offcanvas-cart {
+  font-family: "Poppins", sans-serif;
+ }
+
 .bestsellers {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
+    font-family: 'Fredoka One', cursive;
     }
 
 form {
@@ -32,7 +38,6 @@ form {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6cbaf0",endColorstr="#f3c87f",GradientType=1);
   letter-spacing: 1px;
   cursor: pointer;
-
 }
 
 .btn:active {
@@ -40,7 +45,7 @@ form {
 }
 
 .basket-big {
-    font-size: 30px;
+    font-size: 2.3rem;
     cursor: pointer;
 }
 
@@ -95,13 +100,13 @@ form {
 }
 
 header {
-  height: 25vh;
+  height: 20vh;
   background-image: url("https://cdn.pixabay.com/photo/2021/04/28/09/44/book-6213537__480.jpg");
   background-size: cover;
   background-position: center center;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .category {
@@ -132,7 +137,6 @@ header {
 
 .title {
   margin-top: 5px;
-  font-size: smaller;
   width: 8rem;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -151,3 +155,42 @@ header {
 .table td {
   vertical-align: middle;
 }
+
+#nav-basket {
+  width: 5em;
+}
+/* Basket animation styles */
+
+.zoom {
+  position: sticky;
+  top: 0px;
+  right: 30%;
+  width: 2rem;
+  opacity: 0;
+  z-index: 1100;
+  animation: basket-animation 1s ease forwards;
+}
+
+
+@keyframes basket-animation{
+  0%{opacity: 0}
+  50%{opacity: 1}
+  100%{opacity: 0}
+}
+
+@media screen and (min-device-width: 320px) 
+and (max-device-width: 480px){
+
+.form-control {
+  width: 70%;
+}
+
+}
+
+@media screen and (min-device-width: 992px) {
+
+  .container {
+    flex-direction: row-reverse;
+  }
+}
+    

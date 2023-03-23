@@ -62,7 +62,19 @@ $(document).ready(() => {
     const id = $(this).data("id");
 
     localStorage.setItem(id, JSON.stringify(item));
+
+    // Clone book cover for animation
+
+    $(this).closest(".book").find(".imgBook")
+      .clone()
+      .addClass("zoom")
+      .appendTo("#nav-basket");
+    setTimeout(function(){
+      $(".zoom").remove();
+    }, 1000)
   });
+
+  
 
   $(".basket-big").click(function () {
     $("#offcanvas-cart").empty();
@@ -80,7 +92,7 @@ $(document).ready(() => {
         }" data-id="${key}"></td>
 
         <td class="cart-price book-price"><span id="price-${key}">${
-        item.price * item.quantity
+        (item.price * item.quantity).toFixed(2)
       }</span> &euro;</td>
         <td>
           <button class="button-del" data-id="${key}">Delete</button>

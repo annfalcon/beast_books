@@ -14,11 +14,6 @@
     />
 
     <link rel="stylesheet" href="./style.css" />
-    <style>
-      html * {
-        font-family: "Poppins", sans-serif;
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -26,36 +21,47 @@
     </header>
 
     <nav
-      class="navbar navbar-light bg-light navbar-expand-lg justify-content-between"
+      class="navbar navbar-light bg-light navbar-expand-lg justify-content-between sticky-top"
     >
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto wide">
-          <li class="nav-item bestsellers">
-            <a class="nav-link" href="#">Bestsellers</a>
-          </li>
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="nav-basket">
+          <i
+            class="bi bi-basket basket-big"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+          ></i>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto wide">
+            <li class="nav-item bestsellers">
+              <a class="nav-link" href="#">Bestsellers</a>
+            </li>
 
-          <li>
-            <form class="d-flex">
-              <input
-                class="form-control mr-sm-2 search-box"
-                type="search"
-                placeholder="Enter a book title"
-                aria-label="Search"
-              />
-              <button class="btn my-2 my-sm-0 search" type="submit">
-                Search
-              </button>
-            </form>
-          </li>
-          <li>
-            <i
-              class="bi bi-basket basket-big"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight"
-              aria-controls="offcanvasRight"
-            ></i>
-          </li>
-        </ul>
+            <li>
+              <form>
+                <input
+                  class="form-control search-box"
+                  type="search"
+                  placeholder="Please enter Your book title"
+                  aria-label="Search"
+                />
+                <button class="btn search" type="submit">Search</button>
+              </form>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
