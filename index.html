@@ -37,7 +37,7 @@
         </button>
         <div id="nav-basket">
           <i
-            class="bi bi-basket basket-big"
+            class="bi bi-basket icon-big basket"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasRight"
             aria-controls="offcanvasRight"
@@ -68,16 +68,64 @@
     <main>
       <section>
         <div class="row">
-          <div class="col-2">
-            <div class="all-category category selected">All category</div>
+          <div class="col-md-2">
+            <div class="filter-hidden">
+              <div class="d-grid gap-2">
+                <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                  <i class="bi bi-filter-circle icon-big"></i> Categories
+                </button>
+              </div>
+              <!-- Here put offcanvas HTML -->
+              <div
+                class="offcanvas offcanvas-start"
+                tabindex="-1"
+                id="offcanvasTop"
+                aria-labelledby="offcanvasTopLabel"
+              >
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasTopLabel">
+                    Categories
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div class="all-category category selected">All category</div>
+                  <ul class="categories">
+                    <li class="category">art</li>
+                    <li class="category">biography & autobiography</li>
+                    <li class="category">computers</li>
+                    <li class="category">design</li>
+                    <li class="category">fiction</li>
+                    <li class="category">gardening</li>
+                    <li class="category">health & fitness</li>
+                    <li class="category">kids</li>
+                    <li class="category">language arts & disciplines</li>
+                    <li class="category">mathematics</li>
+                    <li class="category">nature</li>
+                    <li class="category">psychology</li>
+                    <li class="category">science</li>
+                    <li class="category">travel</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!--  -->
+            </div>
+
+            <div class="all-category category selected all-category-large">All category</div>
           </div>
-          <div class="col-10">
+          <div class="col-md-10">
             <div class="heading">Books</div>
           </div>
         </div>
         <div class="row">
-          <div class="col-2">
-            <ul class="categories">
+          <div class="col-md-2">
+            <ul class="categories categories-large">
               <li class="category">art</li>
               <li class="category">biography & autobiography</li>
               <li class="category">computers</li>
@@ -97,7 +145,7 @@
           <div
             id="books-container"
             div
-            class="container d-flex flex-wrap col-10"
+            class="container d-flex flex-wrap col-md-10"
           ></div>
         </div>
       </section>

@@ -14,6 +14,9 @@ $(document).ready(() => {
     $(this).addClass("selected");
     // Fetch books and add into the container
     getBooks(category);
+
+    //Hide offcanvas
+    $("#offcanvasTop").offcanvas('hide');
   });
 
   //  Handle .all-category click events
@@ -76,7 +79,7 @@ $(document).ready(() => {
 
   
 
-  $(".basket-big").click(function () {
+  $(".basket").click(function () {
     $("#offcanvas-cart").empty();
 
     for (let i = 0; i < localStorage.length; i++) {
