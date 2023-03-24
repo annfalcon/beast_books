@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Chango&family=Fredoka&family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chango&family=Courgette&family=Fredoka:wght@600&family=Poppins&display=swap");
 
 * {
   margin: 0;
@@ -10,13 +10,22 @@
 }
 
 h1 {
+  font-size: 3.5rem;
   text-align: center;
-  font-family: "Chango", cursive;
-  color: #3a6dc4;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  font-family: "Courgette", cursive;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: rgb(7, 46, 146);
+  -webkit-text-fill-color: rgb(42, 70, 192);
 }
 
+h2 {
+  font-size: 2.5rem;
+  text-align: left;
+  font-family: "Courgette", cursive;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: rgb(7, 46, 146);
+  -webkit-text-fill-color: rgb(42, 70, 192);
+}
 nav,
 main,
 div #offcanvas-cart {
@@ -24,8 +33,8 @@ div #offcanvas-cart {
 }
 
 .bestsellers {
-  font-size: 1.6rem;
-  font-family: "Fredoka One", cursive;
+  font-size: 1.8rem;
+  font-family: "Courgette", cursive;
 }
 
 form {
@@ -44,6 +53,14 @@ form {
 
 .btn:active {
   font-size: larger;
+}
+
+.search-box {
+  border-radius: 20px;
+}
+
+.btn-search {
+  border-radius: 15px;
 }
 
 .icon-big {
@@ -85,8 +102,9 @@ form {
 
 .heading {
   font-size: 1.5rem;
-  margin: 10px 5px;
+  margin: 10px 0px;
   padding: 10px 15px;
+  letter-spacing: 5px;
 }
 
 .all-category {
@@ -114,6 +132,7 @@ header {
   list-style-type: none;
   text-transform: capitalize;
   cursor: pointer;
+  margin-top: 0.5em;
 }
 
 .category:hover {
@@ -176,6 +195,11 @@ header {
   display: none;
 }
 
+.btn-canvas {
+  letter-spacing: 5px;
+  font-size: 1.5rem;
+}
+
 @keyframes basket-animation {
   0% {
     opacity: 0;
@@ -204,9 +228,14 @@ header {
   .all-category-large {
     display: none;
   }
-}
 
-@media screen and(min-width: 481px) and (max-width: 768px) {
+  .book {
+    width: 10.5rem;
+  }
+
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  
   .filter-hidden {
     display: block;
   }
@@ -218,12 +247,29 @@ header {
   .all-category-large {
     display: none;
   }
+
 }
 
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .book {
+    width: 10.5rem;
+  }
+ #books-container {
+  padding-left: 60px;
+  }
+  .nav-container {
+    flex-direction: row-reverse;
+  }
+  .search-box {
+    width: 20rem;
+  }
+  
+}
 
 @media screen and (min-width: 992px) {
-  .container {
+  .nav-container {
     flex-direction: row-reverse;
   }
 }
+
 

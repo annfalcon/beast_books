@@ -21,9 +21,9 @@
     </header>
 
     <nav
-      class="navbar navbar-light bg-light navbar-expand-lg justify-content-between sticky-top"
+      class="navbar navbar-light bg-light navbar-expand-md justify-content-between sticky-top"
     >
-      <div class="container">
+      <div class="container nav-container">
         <button
           class="navbar-toggler"
           type="button"
@@ -46,7 +46,9 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto wide">
             <li class="nav-item bestsellers">
-              <a class="nav-link" href="#">Bestsellers</a>
+              <a class="nav-link" href="#"
+                ><i class="bi bi-bookmark-star"></i>Bestsellers</a
+              >
             </li>
 
             <li>
@@ -54,99 +56,121 @@
                 <input
                   class="form-control search-box"
                   type="search"
-                  placeholder="Please enter Your book title"
+                  placeholder="Enter Your book title..."
                   aria-label="Search"
                 />
-                <button class="btn search" type="submit">Search</button>
+                <button class="btn search btn-search" type="submit">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-search"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                    />
+                  </svg>
+                </button>
               </form>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
     <main>
       <section>
-        <div class="row">
-          <div class="col-md-2">
-            <div class="filter-hidden">
-              <div class="d-grid gap-2">
-                <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
-                  <i class="bi bi-filter-circle icon-big"></i> Categories
-                </button>
-              </div>
-              <!-- Here put offcanvas HTML -->
-              <div
-                class="offcanvas offcanvas-start"
-                tabindex="-1"
-                id="offcanvasTop"
-                aria-labelledby="offcanvasTopLabel"
-              >
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasTopLabel">
-                    Categories
-                  </h5>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <div class="filter-hidden">
+                <div class="d-grid gap-2">
                   <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close"
-                  ></button>
+                    class="btn btn-canvas"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasTop"
+                    aria-controls="offcanvasTop"
+                  >
+                    <i class="bi bi-filter-circle icon-big"></i> Categories
+                  </button>
                 </div>
-                <div class="offcanvas-body">
-                  <div class="all-category category selected">All category</div>
-                  <ul class="categories">
-                    <li class="category">art</li>
-                    <li class="category">biography & autobiography</li>
-                    <li class="category">computers</li>
-                    <li class="category">design</li>
-                    <li class="category">fiction</li>
-                    <li class="category">gardening</li>
-                    <li class="category">health & fitness</li>
-                    <li class="category">kids</li>
-                    <li class="category">language arts & disciplines</li>
-                    <li class="category">mathematics</li>
-                    <li class="category">nature</li>
-                    <li class="category">psychology</li>
-                    <li class="category">science</li>
-                    <li class="category">travel</li>
-                  </ul>
+                <!-- Here put offcanvas HTML -->
+                <div
+                  class="offcanvas offcanvas-start"
+                  tabindex="-1"
+                  id="offcanvasTop"
+                  aria-labelledby="offcanvasTopLabel"
+                >
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasTopLabel">
+                      Categories
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <div class="all-category category selected">
+                      All category
+                    </div>
+                    <ul class="categories">
+                      <li class="category">art</li>
+                      <li class="category">biography & autobiography</li>
+                      <li class="category">computers</li>
+                      <li class="category">design</li>
+                      <li class="category">fiction</li>
+                      <li class="category">gardening</li>
+                      <li class="category">health & fitness</li>
+                      <li class="category">kids</li>
+                      <li class="category">language arts & disciplines</li>
+                      <li class="category">mathematics</li>
+                      <li class="category">nature</li>
+                      <li class="category">psychology</li>
+                      <li class="category">science</li>
+                      <li class="category">travel</li>
+                    </ul>
+                  </div>
                 </div>
+                <!--  -->
               </div>
 
-              <!--  -->
+              <div class="all-category category selected all-category-large">
+                All category
+              </div>
             </div>
-
-            <div class="all-category category selected all-category-large">All category</div>
+            <div class="col-md-10">
+              <div class="heading">Books</div>
+            </div>
           </div>
-          <div class="col-md-10">
-            <div class="heading">Books</div>
+          <div class="row">
+            <div class="col-md-2">
+              <ul class="categories categories-large">
+                <li class="category">art</li>
+                <li class="category">biography & autobiography</li>
+                <li class="category">computers</li>
+                <li class="category">design</li>
+                <li class="category">fiction</li>
+                <li class="category">gardening</li>
+                <li class="category">health & fitness</li>
+                <li class="category">kids</li>
+                <li class="category">language arts & disciplines</li>
+                <li class="category">mathematics</li>
+                <li class="category">nature</li>
+                <li class="category">psychology</li>
+                <li class="category">science</li>
+                <li class="category">travel</li>
+              </ul>
+            </div>
+            <div
+              id="books-container"
+              div
+              class="container d-flex flex-wrap col-md-10"
+            ></div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2">
-            <ul class="categories categories-large">
-              <li class="category">art</li>
-              <li class="category">biography & autobiography</li>
-              <li class="category">computers</li>
-              <li class="category">design</li>
-              <li class="category">fiction</li>
-              <li class="category">gardening</li>
-              <li class="category">health & fitness</li>
-              <li class="category">kids</li>
-              <li class="category">language arts & disciplines</li>
-              <li class="category">mathematics</li>
-              <li class="category">nature</li>
-              <li class="category">psychology</li>
-              <li class="category">science</li>
-              <li class="category">travel</li>
-            </ul>
-          </div>
-          <div
-            id="books-container"
-            div
-            class="container d-flex flex-wrap col-md-10"
-          ></div>
         </div>
       </section>
     </main>
