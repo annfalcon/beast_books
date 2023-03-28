@@ -10,8 +10,8 @@
 }
 
 h1 {
-  font-size: 3.5rem;
-  text-align: center;
+  font-size: 2.5rem;
+  text-align: center center;
   font-family: "Courgette", cursive;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: rgb(7, 46, 146);
@@ -26,6 +26,14 @@ h2 {
   -webkit-text-stroke-color: rgb(7, 46, 146);
   -webkit-text-fill-color: rgb(42, 70, 192);
 }
+
+.bi-book {
+  font-size: 4rem;
+  color: rgb(7, 46, 146);
+  margin-right: 20px;
+  padding-bottom: 0px;
+}
+
 nav,
 main,
 div #offcanvas-cart {
@@ -37,8 +45,8 @@ div #offcanvas-cart {
   font-family: "Courgette", cursive;
 }
 
-form {
-  width: 400px;
+.search-box {
+  width: 380px;
   height: 45px;
   display: flex;
 }
@@ -57,10 +65,14 @@ form {
 
 .search-box {
   border-radius: 20px;
+  display: inline;
 }
 
 .btn-search {
-  border-radius: 15px;
+  border-radius: 13px;
+ 
+
+
 }
 
 .icon-big {
@@ -125,7 +137,7 @@ header {
   background-position: center center;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  padding-left: 35vw;
 }
 
 .category {
@@ -199,6 +211,17 @@ header {
   letter-spacing: 5px;
   font-size: 1.5rem;
 }
+
+/* checkout */
+
+.caption-h5 {
+  margin-top: 2rem;
+}
+
+.order-summery {
+  }
+
+
 
 @keyframes basket-animation {
   0% {
