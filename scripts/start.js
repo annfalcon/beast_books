@@ -106,6 +106,8 @@ $(document).ready(() => {
     $("#totalPrice").text(totalPrice())
   });
 
+  
+
   // Handle click for delete button (this button is added by JS)
   $("#offcanvas-cart").on("click", ".button-del", function () {
     // Reading book id from delete button
