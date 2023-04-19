@@ -23,33 +23,29 @@ $(document).ready(() => {
   // Get countries for form options
   getCountries();
 
-  $("#shipping-options input[type=radio]").click(function(){
+  $("#shipping-options input[type=radio]").click(function () {
+    let val = parseFloat($(this).val());
+    let price = totalPrice();
+    let totalWithShipping = (val + price).toFixed(2);
 
-    let val=parseFloat($(this).val())
-    let price = totalPrice()
-    let totalWithShipping = (val + price).toFixed(2)
+    $("#shipping-cost").text(val);
+    $("#total-cost").text(totalWithShipping);
+  });
 
-    $("#shipping-cost").text(val)
-    $("#total-cost").text(totalWithShipping)
-
-
-  })
-
-  $("#total-cost").text(totalPrice())
-
+  $("#total-cost").text(totalPrice());
 });
 
 // Total price without shipping
 
 function totalPrice() {
-    let total = 0;
-    for (let i=0; i< localStorage.length; i++){
-      const key = localStorage.key(i);
-      const item = JSON.parse(localStorage.getItem(key));
-      total = total + (item.price * item.quantity);
-    }
-    return total
+  let total = 0;
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const item = JSON.parse(localStorage.getItem(key));
+    total = total + item.price * item.quantity;
   }
+  return total.toFixed(2);
+}
 
 // Function load item
 function loadItems() {

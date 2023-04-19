@@ -16,6 +16,7 @@ h1 {
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: rgb(7, 46, 146);
   -webkit-text-fill-color: rgb(42, 70, 192);
+  text-decoration: none;
 }
 
 h2 {
@@ -38,6 +39,10 @@ nav,
 main,
 div #offcanvas-cart {
   font-family: "Poppins", sans-serif;
+}
+
+.btn-login {
+  margin-right: 2rem;
 }
 
 .bestsellers {
@@ -70,8 +75,6 @@ div #offcanvas-cart {
 
 .btn-search {
   border-radius: 13px;
- 
-
 
 }
 
@@ -131,7 +134,7 @@ div #offcanvas-cart {
 }
 
 header {
-  height: 20vh;
+  height: 15vh;
   background-image: url("https://cdn.pixabay.com/photo/2021/04/28/09/44/book-6213537__480.jpg");
   background-size: cover;
   background-position: center center;
@@ -218,7 +221,20 @@ header {
   margin-top: 2rem;
 }
 
+.checkout-link{
+  display: inline;
+  
+}
 
+.checkout-h1 {
+  display: inline-block;
+  width: 50vw;
+  padding-left: 35vw;
+}
+
+.home-link {
+  text-decoration: none;
+}
 
 
 @keyframes basket-animation {
@@ -253,6 +269,15 @@ header {
   .book {
     width: 10.5rem;
   }
+
+  .checkout-h1 {
+    padding-left: 10vw;
+  }
+
+  /* .btn-login {
+  margin-right: 1rem;
+  } */
+  
 
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {

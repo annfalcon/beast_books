@@ -1,0 +1,58 @@
+html,
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2016/06/20/13/44/paper-1468883_1280.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+/* .page{
+    
+} */
+
+.card {
+  height: 370px;
+  margin-top: 150px;
+  width: 400px;
+  background-color: rgb(123, 178, 184);
+  border-radius: 20px;
+  display: none;
+}
+
+.card-header h3 {
+  color: white;
+}
+
+.input-group-prepend span {
+  width: 50px;
+  background-color: rgb(61, 147, 156);
+  color: black;
+  border: 0 !important;
+}
+
+.remember input {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
+  accent-color: rgb(61, 147, 156);
+}
+
+.login_btn {
+  background-color: rgb(61, 147, 156);
+  width: 100px;
+}
+
+.login_btn:hover {
+  background-color: rgb(15, 92, 100);
+}
+
+.btn-order {
+    background-color: rgb(61, 147, 156);
+    border: none;
+}
+
+.btn-order:hover {
+    background-color: rgb(15, 92, 100);
+  }
