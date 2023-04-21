@@ -11,7 +11,7 @@ $(document).ready(() => {
         // if form is not valid don't submit it
         event.preventDefault();
         event.stopPropagation();
-        // add bootstrap class for validation
+        // add bootstrap class for validatio
         form.classList.add("was-validated");
       }
     },

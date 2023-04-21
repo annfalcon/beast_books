@@ -7,9 +7,11 @@ body {
   height: 100%;
 }
 
-/* .page{
+ .page{
+  display: none;
+ }
     
-} */
+
 
 .card {
   height: 370px;
@@ -17,7 +19,7 @@ body {
   width: 400px;
   background-color: rgb(123, 178, 184);
   border-radius: 20px;
-  display: none;
+ 
 }
 
 .card-header h3 {

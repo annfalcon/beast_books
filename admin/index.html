@@ -32,14 +32,17 @@
             <h3>Sign In Admin</h3>
           </div>
           <div class="card-body">
-            <form>
+            <form id="loginForm" novalidate>
               <div class="input-group form-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text"
                     ><i class="fas fa-user"></i
                   ></span>
                 </div>
-                <input type="text" class="form-control" placeholder="Admin" />
+                <input type="text" class="form-control" placeholder="admin" id="username" required />
+                <div class="invalid-feedback">
+                  Please use "admin" for demo purpose
+                </div>
               </div>
               <div class="input-group form-group">
                 <div class="input-group-prepend">
@@ -50,8 +53,13 @@
                 <input
                   type="password"
                   class="form-control"
-                  placeholder="Admin"
+                  placeholder="admin"
+                  id="password"
+                  required
                 />
+                <div class="invalid-feedback">
+                  Please use "admin" for demo purpose
+                </div>
               </div>
               <div class="row align-items-center remember">
                 <input type="checkbox" />Remember Me
@@ -77,30 +85,31 @@
             >
               Add new order
             </button>
-
-            <div
-              class="modal fade"
-              id="orderModal"
-              tabindex="-1"
-              role="dialog"
-              aria-labelledby="orderModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="orderModalLabel">Add Order</h5>
-                    <button
-                      type="button"
-                      class="close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form action="">
+            <form id="orderForm" novalidate>
+              <div
+                class="modal fade"
+                id="orderModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="orderModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="orderModalLabel">
+                        Add Order
+                      </h5>
+                      <button
+                        type="button"
+                        class="close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
                       <div class="form-group">
                         <label for="orderInputEmail">Client e-mail</label>
                         <input
@@ -109,17 +118,19 @@
                           id="orderInputEmail"
                           aria-describedby="emailHelp"
                           placeholder="Enter email"
+                          required
                         />
                       </div>
                       <div class="form-group">
-                        <label for="orderInputBooks">Books</label>
+                        <label for="orderInputBooks">Books title</label>
                         <input
                           type="text"
                           class="form-control"
                           id="orderInputBooks"
-                          placeholder="Book ISBN"
+                          placeholder="book"
+                          required
                         />
-                        <small>Coma separated ISBN numbers</small>
+                        <small>Coma separated books title</small>
                       </div>
 
                       <div class="form-group">
@@ -131,33 +142,147 @@
                           aria-describedby="emailHelp"
                           placeholder="0.00"
                           step=".01"
+                          required
                         />
                       </div>
 
                       <div class="form-group">
                         <label for="orderInputStatus">Status</label>
-                        <select class="custom-select" id="orderInputStatus">
-                          <option selected>Choose...</option>
-                          <option value="New">New</option>
+                        <select class="form-select" id="orderInputStatus">
+                          <option value="New" selected>New</option>
                           <option value="Processing">Processing</option>
                           <option value="Shipped">Shipped</option>
                         </select>
                       </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button type="button" id="orderSaveButton" class="btn btn-primary">Save</button>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button
+                        type="submit"
+                        id="orderSaveButton"
+                        class="btn btn-primary"
+                      >
+                        Save
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+
+              <!-- Edit order modal form -->
+              <div
+                class="modal fade"
+                id="orderEditModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="orderEditModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="orderEditModalLabel">
+                        Edit Order
+                      </h5>
+                      <button
+                        type="button"
+                        class="close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <label for="orderEditInputId">Order Id</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="orderEditInputId"
+                          required
+                          readonly
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="orderEditInputEmail">Client e-mail</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="orderEditInputEmail"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="orderEditInputBooks">Books title</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="orderEditInputBooks"
+                          placeholder="book"
+                          required
+                        />
+                        <small>Coma separated books title</small>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="orderEditInputPrice">Total price &euro;</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="orderEditInputPrice"
+                          aria-describedby="emailHelp"
+                          placeholder="0.00"
+                          step=".01"
+                          required
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="orderEditInputStatus">Status</label>
+                        <select class="form-select" id="orderEditInputStatus">
+                          <option value="New" selected>New</option>
+                          <option value="Processing">Processing</option>
+                          <option value="Shipped">Shipped</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button
+                        type="button"
+                        id="orderEditSaveButton"
+                        class="btn btn-primary"
+                      >
+                        Save
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                
+
+            </form>
+
+          
+            
           </div>
 
           <table
@@ -176,32 +301,47 @@
               </tr>
             </thead>
             <tbody id="tableOrdersBody">
-              <tr>
+              <tr id="order-1">
                 <td scope="col">1</td>
-                <td scope="col">Wszyscy niestety normalni</td>
-                <td scope="col">j.oleksy@gmail.com</td>
+                <td scope="col">Tis the Season</td>
+                <td scope="col">j.williams@gmail.com</td>
                 <td scope="col">10&euro;</td>
                 <td scope="col">Shipped</td>
-                <td><i class="bi bi-trash"></i></td>
-                <td><i class="bi bi-pencil-square"></i></td>
+                <td><i class="bi bi-trash btn-delete" data-id="1"></i></td>
+                <td>
+                  <i
+                    class="bi bi-pencil-square btn-edit"
+                    data-id="1"
+                  ></i>
+                </td>
               </tr>
-              <tr>
+              <tr id="order-2">
                 <td scope="col">2</td>
-                <td scope="col">To, co zostaje w nas na zawsze</td>
-                <td scope="col">l.fiolek@gmail.com</td>
+                <td scope="col">The Story</td>
+                <td scope="col">l.brown@gmail.com</td>
                 <td scope="col">12&euro;</td>
                 <td scope="col">New</td>
-                <td><i class="bi bi-trash"></i></td>
-                <td><i class="bi bi-pencil-square"></i></td>
+                <td><i class="bi bi-trash btn-delete" data-id="2"></i></td>
+                <td>
+                  <i
+                    class="bi bi-pencil-square btn-edit"
+                    data-id="2"
+                  ></i>
+                </td>
               </tr>
-              <tr>
+              <tr id="order-3">
                 <td scope="col">3</td>
-                <td scope="col">Clone</td>
-                <td scope="col">r.sanecki@interia.pl</td>
+                <td scope="col">The Strangler</td>
+                <td scope="col">r.davis@gmail.com</td>
                 <td scope="col">15&euro;</td>
                 <td scope="col">Processing</td>
-                <td><i class="bi bi-trash"></i></td>
-                <td><i class="bi bi-pencil-square"></i></td>
+                <td><i class="bi bi-trash btn-delete" data-id="3"></i></td>
+                <td>
+                  <i
+                    class="bi bi-pencil-square btn-edit"
+                    data-id="3"
+                  ></i>
+                </td>
               </tr>
             </tbody>
           </table>
