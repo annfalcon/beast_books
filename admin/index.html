@@ -39,7 +39,13 @@
                     ><i class="fas fa-user"></i
                   ></span>
                 </div>
-                <input type="text" class="form-control" placeholder="admin" id="username" required />
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="admin"
+                  id="username"
+                  required
+                />
                 <div class="invalid-feedback">
                   Please use "admin" for demo purpose
                 </div>
@@ -174,8 +180,10 @@
                   </div>
                 </div>
               </div>
+            </form>
 
-              <!-- Edit order modal form -->
+            <!-- Edit order modal form -->
+            <form>
               <div
                 class="modal fade"
                 id="orderEditModal"
@@ -234,7 +242,9 @@
                       </div>
 
                       <div class="form-group">
-                        <label for="orderEditInputPrice">Total price &euro;</label>
+                        <label for="orderEditInputPrice"
+                          >Total price &euro;</label
+                        >
                         <input
                           type="number"
                           class="form-control"
@@ -256,7 +266,6 @@
                       </div>
                     </div>
 
-                    
                     <div class="modal-footer">
                       <button
                         type="button"
@@ -276,13 +285,7 @@
                   </div>
                 </div>
               </div>
-
-                
-
             </form>
-
-          
-            
           </div>
 
           <table
@@ -309,10 +312,7 @@
                 <td scope="col">Shipped</td>
                 <td><i class="bi bi-trash btn-delete" data-id="1"></i></td>
                 <td>
-                  <i
-                    class="bi bi-pencil-square btn-edit"
-                    data-id="1"
-                  ></i>
+                  <i class="bi bi-pencil-square btn-edit" data-id="1"></i>
                 </td>
               </tr>
               <tr id="order-2">
@@ -323,10 +323,7 @@
                 <td scope="col">New</td>
                 <td><i class="bi bi-trash btn-delete" data-id="2"></i></td>
                 <td>
-                  <i
-                    class="bi bi-pencil-square btn-edit"
-                    data-id="2"
-                  ></i>
+                  <i class="bi bi-pencil-square btn-edit" data-id="2"></i>
                 </td>
               </tr>
               <tr id="order-3">
@@ -337,10 +334,7 @@
                 <td scope="col">Processing</td>
                 <td><i class="bi bi-trash btn-delete" data-id="3"></i></td>
                 <td>
-                  <i
-                    class="bi bi-pencil-square btn-edit"
-                    data-id="3"
-                  ></i>
+                  <i class="bi bi-pencil-square btn-edit" data-id="3"></i>
                 </td>
               </tr>
             </tbody>

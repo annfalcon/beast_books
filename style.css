@@ -28,7 +28,7 @@ h2 {
   -webkit-text-fill-color: rgb(42, 70, 192);
 }
 
-.bi-book {
+.bi-book-custom {
   font-size: 4rem;
   color: rgb(7, 46, 146);
   margin-right: 20px;
@@ -223,6 +223,7 @@ header {
 
 .checkout-link{
   display: inline;
+  margin-left: 25%;
   
 }
 
@@ -235,6 +236,31 @@ header {
 .home-link {
   text-decoration: none;
 }
+
+#successContainer {
+  display: none;
+}
+
+.alert-success{
+  width: 40rem;
+  margin-left: 20rem;
+
+}
+
+.img-modal {
+  width: 150px;
+}
+
+.btn-secondary {
+
+  width: 140px;
+  height: auto;
+}
+
+footer {
+  font-size: 1.5rem;
+  padding: 0 30px 0 30px;
+ }
 
 
 @keyframes basket-animation {
@@ -274,9 +300,8 @@ header {
     padding-left: 10vw;
   }
 
-  /* .btn-login {
-  margin-right: 1rem;
-  } */
+ 
+ 
   
 
 }

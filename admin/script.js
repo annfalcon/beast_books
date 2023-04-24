@@ -3,7 +3,7 @@ $(document).ready(() => {
     const form = document.getElementById("orderForm");
 
     const isValid = form.checkValidity();
-
+   
     if (!isValid) {
       // add bootstrap class for validation
       form.classList.add("was-validated");

@@ -22,7 +22,7 @@
           <div>
             <div class="checkout-link">
               <a class="home-link" href="./index.html">
-                <i class="bi bi-book"></i>
+                <i class="bi bi-book bi-book-custom"></i>
               </a>
             </div>
             <div class="checkout-h1">
@@ -30,273 +30,328 @@
             </div>
           </div>
 
-          <div class="row g-5">
-            <div class="col-md-5 order-md-last">
-              <h4
-                class="d-flex justify-content-between algin-items-center mb-3"
-              >
-                <span class="text-primary">Your cart</span>
-              </h4>
-              <ul class="list-group mb-3">
-                <li class="list-group-item lh-sm">
-                  <div>
-                    <h6 class="my-0">Items</h6>
-                  </div>
-                  <div class="d-flex flex-column" id="cart-items"></div>
-                </li>
-                <li
-                  class="list-group-item d-flex justify-content-between lh-sm"
-                >
-                  <div>
-                    <h6 class="my-0">Shipping</h6>
-                  </div>
-                  <div>
-                    <span id="shipping-cost"> </span>
-                    <span class="text-muted">&euro;</span>
-                  </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
-                  <span>Total</span>
-                  <div class="fw-bold">
-                    <span id="total-cost"> </span>
-                    <span>&euro;</span>
-                  </div>
-                </li>
-              </ul>
-              <button type="submit" class="btn btn-secondary">Order</button>
+            <!-- Order alert -->
+          <div id="successContainer">
+
+            <div class="alert alert-success" role="alert">
+              <h4 class="alert-heading">Well done!</h4>
+              <p>Thank you for Your order!
+                You`ll see it in your inbox in just a few days!</p>
+                   
             </div>
-            <div class="col-md-7 col-md">
-              <h5 class="mb-3">1. Billing address</h5>
-              <div class="row g-3">
-                <div class="col-md-5">
-                  <label>First name</label>
 
-                  <input
-                    type="text"
-                    class="input-name form-control"
-                    placeholder="First name"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please choose a First name.
-                  </div>
-                </div>
-                <div class="col-md-5">
-                  <label>Last name</label>
-
-                  <input
-                    type="text"
-                    class="input-name form-control"
-                    placeholder="Last name"
-                    required
-                  />
-                  <div class="invalid-feedback">Please choose a Last name.</div>
-                </div>
-
-                <div class="col-md-5">
-                  <label>Address 1:</label>
-                  <input
-                    type="text"
-                    class="input-name form-control"
-                    placeholder="Address 1"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please provide a valid address.
-                  </div>
-                </div>
-
-                <div class="col-md-5">
-                  <label>Address 2:</label>
-                  <input
-                    type="text"
-                    class="input-name form-control"
-                    placeholder="Address 2"
-                  />
-                </div>
-                <div class="col-md-5">
-                  <label>City:</label>
-
-                  <input
-                    type="text"
-                    class="input-name form-control"
-                    placeholder="City"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please provide a valid city.
-                  </div>
-                </div>
-
-                <div class="col-md-5">
-                  <label>City code:</label>
-
-                  <input
-                    type="text"
-                    class="input-name form-control"
-                    placeholder="00-000"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please provide a postel code.
-                  </div>
-                </div>
-                <div class="col-md-5">
-                  <label>Country:</label>
+          </div>
+          <div id="checkoutContainer">
+            <div class="row g-5">
+              <div class="col-md-5 order-md-last">
+                <h4
+                  class="d-flex justify-content-between algin-items-center mb-3"
+                >
+                  <span class="text-primary">Your cart</span>
+                </h4>
+                <ul class="list-group mb-3">
+                  <li class="list-group-item lh-sm">
+                    <div>
+                      <h6 class="my-0">Items</h6>
+                    </div>
+                    <div class="d-flex flex-column" id="cart-items"></div>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between lh-sm"
                   >
-                  <select
-                    name="country"
-                    id="country-select"
-                    class="input-name form-control"
-                    placeholder="Country"
-                    required
-                  >
-                    <option selected value="">Countires</option>
-                  </select>
-                  <div class="invalid-feedback">Please choose a country.</div>
-                </div>
-
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                    required
-                  />
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Agree to terms and conditions
-                  </label>
-                  <div class="invalid-feedback">
-                    You must agree before submitting.
-                  </div>
-                </div>
-                <h5 class="caption-h5">2. Payment method:</h5>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="payment"
-                    id="flexRadioDefault1"
-                    required
-                  />
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    BLIK
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="payment"
-                    id="flexRadioDefault1"
-                  />
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    PayPal
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="payment"
-                    id="flexRadioDefault1"
-                  />
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    VISA
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="payment"
-                    id="flexRadioDefault1"
-                  />
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Mastercard
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="payment"
-                    id="flexRadioDefault1"
-                  />
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Gift card
-                  </label>
-                </div>
-                <h5 class="caption-h5">3. Select shipping option:</h5>
-
-                <div class="row row-cols-2 row-col-md-2" id="shipping-options">
-                  <div class="col-md-3">DPD</div>
-                  <div class="col-md-3">GLS</div>
-                  <div class="col-md-3">DHL</div>
-                  <div class="col-md-3">FedEx</div>
-
-                  <div class="col-md-3">4,0 &euro;</div>
-                  <div class="col-md-3">4,2 &euro;</div>
-                  <div class="col-md-3">4,5 &euro;</div>
-                  <div class="col-md-3">4,3 &euro;</div>
-
-                  <div class="col-md-3">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="shipping"
-                        id="flexRadioDefault1"
-                        required
-                        value="4.0"
-                      />
+                    <div>
+                      <h6 class="my-0">Shipping</h6>
+                    </div>
+                    <div>
+                      <span id="shipping-cost"> </span>
+                      <span class="text-muted">&euro;</span>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between">
+                    <span>Total</span>
+                    <div class="fw-bold">
+                      <span id="total-cost"> </span>
+                      <span>&euro;</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-7 col-md">
+                <h5 class="mb-3">1. Billing address</h5>
+                <div class="row g-3">
+                  <div class="col-md-5">
+                    <label>First name</label>
+  
+                    <input
+                      type="text"
+                      class="input-name form-control"
+                      placeholder="First name"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Please choose a First name.
                     </div>
                   </div>
-
-                  <div class="col-md-3">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="shipping"
-                        id="flexRadioDefault1"
-                        value="4.2"
-                      />
+                  <div class="col-md-5">
+                    <label>Last name</label>
+  
+                    <input
+                      type="text"
+                      class="input-name form-control"
+                      placeholder="Last name"
+                      required
+                    />
+                    <div class="invalid-feedback">Please choose a Last name.</div>
+                  </div>
+  
+                  <div class="col-md-5">
+                    <label>Address 1:</label>
+                    <input
+                      type="text"
+                      class="input-name form-control"
+                      placeholder="Address 1"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Please provide a valid address.
                     </div>
                   </div>
-
-                  <div class="col-md-3">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="shipping"
-                        id="flexRadioDefault1"
-                        value="4.5"
-                      />
+  
+                  <div class="col-md-5">
+                    <label>Address 2:</label>
+                    <input
+                      type="text"
+                      class="input-name form-control"
+                      placeholder="Address 2"
+                    />
+                  </div>
+                  <div class="col-md-5">
+                    <label>City:</label>
+  
+                    <input
+                      type="text"
+                      class="input-name form-control"
+                      placeholder="City"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Please provide a valid city.
                     </div>
                   </div>
-
-                  <div class="col-md-3">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="shipping"
-                        id="flexRadioDefault1"
-                        value="4.3"
-                      />
+  
+                  <div class="col-md-5">
+                    <label>City code:</label>
+  
+                    <input
+                      type="text"
+                      class="input-name form-control"
+                      placeholder="00-000"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Please provide a postel code.
                     </div>
                   </div>
+                  <div class="col-md-5">
+                    <label>Country:</label>
+                    >
+                    <select
+                      name="country"
+                      id="country-select"
+                      class="input-name form-control"
+                      placeholder="Country"
+                      required
+                    >
+                      <option selected value="">Countires</option>
+                    </select>
+                    <div class="invalid-feedback">Please choose a country.</div>
+                  </div>
+  
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                      required
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                      You must agree before submitting.
+                    </div>
+                  </div>
+                  <h5 class="caption-h5">2. Payment method:</h5>
+  
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="payment"
+                      id="flexRadioDefault1"
+                      required
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      BLIK
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="payment"
+                      id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      PayPal
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="payment"
+                      id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      VISA
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="payment"
+                      id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Mastercard
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="payment"
+                      id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Gift card
+                    </label>
+                  </div>
+                  <h5 class="caption-h5">3. Select shipping option:</h5>
+  
+                  <div id="shipping-options">
+                    <div>
+                      <div class="col-md-3">DPD 4,0 &euro;</div>
+  
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="shipping"
+                          id="flexRadioDefault1"
+                          required
+                          value="4.0"
+                        />
+                      </div>
+                    </div>
+  
+                    <div>
+                      <div class="col-md-3">GLS 4,2 &euro;</div>
+                      <div class="col-md-3">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="shipping"
+                            id="flexRadioDefault1"
+                            value="4.2"
+                          />
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div>
+                      <div class="col-md-3">DHL 4,5 &euro;</div>
+  
+                      <div class="col-md-3">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="shipping"
+                            id="flexRadioDefault1"
+                            value="4.5"
+                          />
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div>
+                      <div class="col-md-3">FedEx 4,3 &euro;</div>
+  
+                      <div class="col-md-3">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="shipping"
+                            id="flexRadioDefault1"
+                            value="4.3"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-secondary">Order</button>
                 </div>
               </div>
             </div>
+
           </div>
+          
         </form>
       </main>
     </div>
+
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+    >
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 text-body-secondary"
+          >© 2023 Book Beast, Inc</span
+        >
+      </div>
+
+      <a
+        href="/"
+        class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+      >
+        <i class="bi bi-book"></i>
+      </a>
+
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3">
+          <a class="text-body-secondary" href="#"
+            ><i class="bi bi-twitter"></i
+          ></a>
+        </li>
+        <li class="ms-3">
+          <a class="text-body-secondary" href="#"
+            ><i class="bi bi-instagram"></i
+          ></a>
+        </li>
+        <li class="ms-3">
+          <a class="text-body-secondary" href="#"
+            ><i class="bi bi-facebook"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
   </body>
+
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

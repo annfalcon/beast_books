@@ -8,12 +8,16 @@ $(document).ready(() => {
       const isValid = form.checkValidity();
 
       if (!isValid) {
-        // if form is not valid don't submit it
-        event.preventDefault();
-        event.stopPropagation();
         // add bootstrap class for validatio
         form.classList.add("was-validated");
+      } else {
+        $("#checkoutContainer").hide();
+        $("#successContainer").show();
       }
+
+      // don't submit form
+      event.preventDefault();
+      event.stopPropagation();
     },
     false
   );
@@ -25,7 +29,7 @@ $(document).ready(() => {
 
   $("#shipping-options input[type=radio]").click(function () {
     let val = parseFloat($(this).val());
-    let price = totalPrice();
+    let price = parseFloat(totalPrice());
     let totalWithShipping = (val + price).toFixed(2);
 
     $("#shipping-cost").text(val);
@@ -77,8 +81,6 @@ async function getCountries() {
 
   if (response.status == 200) {
     const countries = await response.json();
-
-    console.log(countries);
 
     for (let i = 0; i < countries.length; i++) {
       const country = countries[i];

@@ -43,8 +43,8 @@ $(document).ready(() => {
     getBestSellers();
   });
 
-  // Handle click event for search button
-  $(".search.btn").click(function () {
+  // Handle submit event for search button
+  $("#searchForm").submit(function () {
     // Read the value from search box
     const searchBox = $(".search-box").val();
     // Remove books from container
@@ -52,6 +52,7 @@ $(document).ready(() => {
 
     $(".category").removeClass("selected");
     getBooks(searchBox);
+    return false;
   });
 
   $("#books-container").on("click", ".btn-add-cart", function () {
@@ -65,6 +66,8 @@ $(document).ready(() => {
     const id = $(this).data("id");
 
     localStorage.setItem(id, JSON.stringify(item));
+
+    
 
     // Clone book cover for animation
 
@@ -137,6 +140,38 @@ $(document).ready(() => {
     //Update total 
     $("#totalPrice").text(totalPrice())
   });
+
+  $("#books-container").on("click", ".imgBook", async function () {
+    const bookId = $(this).data("id")
+    console.log(bookId)
+    const response = await fetch(
+      `https://www.googleapis.com/books/v1/volumes/${bookId}`
+    );
+    // Check the status in response
+    if (response.status == 200) {
+      //reading json body
+      const book = await response.json();
+      //Exit the function if there are no books
+      if (!book) {
+        return;
+      }
+
+      // Reading data from book json for modal description
+      const desc = book.volumeInfo.description
+      const img = book.volumeInfo.imageLinks.thumbnail
+      const title = book.volumeInfo.title
+
+      $("#bookModalLabel").text(title)
+      $("#bookImg").html(`
+      <img class="img-modal" src="${img}" alt="" />
+      `)
+      $("#bookDesc").html(desc)
+      $("#bookModal").modal("show")
+
+    }
+
+  })
+
 });
 
 
@@ -181,7 +216,7 @@ async function getBooks(kind) {
       // Add book html to container
 
       $("#books-container").append(`<div class="book">
-        <img class="imgBook" src="${thumbnail}" alt="" srcset="">
+        <img class="imgBook" src="${thumbnail}" alt="" srcset="" data-id="${books[i].id}">
         <div class="title">
         ${books[i].volumeInfo.title}
         </div>

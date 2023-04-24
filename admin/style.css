@@ -11,8 +11,6 @@ body {
   display: none;
  }
     
-
-
 .card {
   height: 370px;
   margin-top: 150px;
@@ -51,10 +49,20 @@ body {
 }
 
 .btn-order {
-    background-color: rgb(61, 147, 156);
-    border: none;
+  background-color: rgb(61, 147, 156);
+  border: none;
+  margin-top: 3rem;
 }
 
 .btn-order:hover {
-    background-color: rgb(15, 92, 100);
+  background-color: rgb(15, 92, 100);
   }
+
+.btn-delete {
+  cursor: pointer;
+}
+
+.btn-edit {
+  cursor: pointer;
+}
+
